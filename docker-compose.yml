@@ -1,0 +1,31 @@
+web:
+  build: .
+  environment:
+
+    CFG_APP_ENVIRONMENT: dev
+
+    CFG_APP_DEBUG: 1
+    CFG_APP_CACHE: 1
+
+    CFG_APP_DOMAIN: 'api.magic-eight.dev0.be.lan'
+
+    CFG_DB_HOST: db
+    CFG_DB_PORT: 3306
+    CFG_DB_DBNAME: pro2_view
+    CFG_DB_USERNAME: admin
+    CFG_DB_PASSWORD: password
+
+    SERVER_MAX_BODY_SIZE: 4M
+    SERVER_SENDFILE: "off"
+
+    FPM_HEADER_SIZE: 4M
+    FPM_BUFFER_COUNT: 16
+    FPM_BUFFER_SIZE: 1M
+
+    VIRTUAL_HOST: .test-project.dev0.be.lan
+    CFG_CORS_ALLOW_ORIGINS: https://www.pro2.dev0.be.lan,https://net.dev.be.lan
+
+  volumes:
+   - ./:/app
+  ports:
+   - '80'
